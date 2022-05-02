@@ -1,0 +1,406 @@
+<html>
+    <head>
+        <title>quiz </title>
+        <style>
+        .parent
+        {
+            background-color:blue;
+            color:white;
+        }
+        .answer
+        {
+            background-color:pink;
+            color:black;
+            font-size:15;
+            font-weight:bold;
+        }
+        .question
+        {
+            text-transform:uppercase;
+            text-align:left;
+            font-size:10;
+        }
+        button
+        {
+            margin:4;
+        }
+        marquee
+        {
+            text-transform:uppercase;
+            font-size:40;
+            font-weight: bold;
+            color:blue;
+        }
+        .personal_details
+        {
+            font-size:14;
+            color: black;
+            font-weight: bold;
+            background-color: antiquewhite;
+        }
+        .personal_details_table
+        {
+            text-align: center;
+            font-size:14;
+            color: black;
+            font-weight: bold;
+        }
+        .top_content
+        {
+            text-align: center;
+            color: green;
+        }
+        .title_1
+        {
+            text-align: center;
+            font-size:30;
+            color:blueviolet;
+            font-weight: bold;
+        }
+        .instruction_details
+        {
+            background-color: antiquewhite;
+        }
+        </style>
+    </head>
+    <body>
+        <div id=main>
+            
+        </div>
+        <div class="button" style="text-align:center">
+            <button onclick="press()">submit </button>
+        </div><br><br>
+        <hr>
+        <hr>
+        <div class=personal_details_table>
+            <h1>DETAILS</h1>
+        <center>
+        <table id="main_1" border="4" cellpadding=3 cellspacing=6>
+            <tr> 
+            <th>PARTICIPATE NAME-1</th>
+            <th>PARTICIPATE NAME-2</th>
+            <th>COURSE</th>
+            <th>YEAR</th>
+            <th>COLLEGE NAME</th>
+            </tr>
+        </table>
+        </center>
+           
+        </div>
+        <hr>
+        <hr>
+        
+        <script>
+        database=[
+            {question:"1.Which of the following technique is used in high speed modem ?",
+            choice1:{answer:"TDM",value:2},
+            choice2:{answer:"PCM",value:4},
+            choice3:{answer:"QAM",value:1},
+            choice4:{answer:"FDM",value:3}},
+
+            {question:"2.________ is system software designed to help analyze, configure, optimize or maintain a computer.",
+            choice1:{answer:"Data compression",value:4},
+            choice2:{answer:"File synchronization",value:2},
+            choice3:{answer:"Hard disk",value:3},
+            choice4:{answer:"Utility Program",value:1}},
+
+            {question:"3.The main directory of a disk is called the ___________ directory",
+            choice1:{answer:"network",value:2},
+            choice2:{answer:"Home",value:4},
+            choice3:{answer:"Other than those given as options",value:3},
+            choice4:{answer:"root",value:1}},
+
+            {question:"4.Firewalls are used to protect against",
+            choice1:{answer:"Phishing",value:3},
+            choice2:{answer:" Vishing",value:4},
+            choice3:{answer:" Unauthorized Attacks",value:1},
+            choice4:{answer:"Data Driven Attacks",value:2}},
+
+            {question:"5.Entomology is the science that studies",
+            choice1:{answer:"Behaviour of human beings",value:4},
+            choice2:{answer:"Insects",value:1},
+            choice3:{answer:"The origin and history of technical and scientific terms",value:2},
+            choice4:{answer:"The formation of rocks",value:3}},
+
+            {question:"6.Areas of which of the following current states did not come under control of Vijayanagar emperor Krishnadeva Raya?",
+            choice1:{answer:"Kerala",value:4},
+            choice2:{answer:"Tamil Nadu",value:3},
+            choice3:{answer:"Odisha",value:2},
+            choice4:{answer:"Maharashtra",value:1}},
+
+            {question:"7.Which one of the following was the first fort constructed by the British in India?",
+            choice1:{answer:"Fort William",value:2},
+            choice2:{answer:"Fort St. George",value:1},
+            choice3:{answer:"Fort St. David",value:4},
+            choice4:{answer:"Fort St. Angelo",value:3}},
+
+            {question:"8.Ball pen function on which one of the following principal?",
+            choice1:{answer:"Boyle’s law",value:3},
+            choice2:{answer:"Gravitational force",value:2},
+            choice3:{answer:"Surface tension",value:1},
+            choice4:{answer:"Viscosity",value:4}},
+
+            {question:"9.Which one is the largest district by areawise in Tamilnadu",
+            choice1:{answer:"Viluppuram",value:1},
+            choice2:{answer:"Tiruvannamalai",value:2},
+            choice3:{answer:"Tirupur",value:3},
+            choice4:{answer:"Pudukkottai",value:4}},
+
+            {question:"10.Tamil Nadu has how many International Airports?",
+            choice1:{answer:"6",value:3},
+            choice2:{answer:"5",value:4},
+            choice3:{answer:"4",value:1},
+            choice4:{answer:"3",value:2}},
+
+            {question:"11.Which one is the largest district by population in TamilnaduWhich one is the largest district by population in Tamilnadu",
+            choice1:{answer:"Salem",value:3},
+            choice2:{answer:" Vellore",value:2},
+            choice3:{answer:"Tiruvannamalai",value:4},
+            choice4:{answer:"Chennai",value:1}},
+
+            {question:"12.Pedology is the science related to the study of",
+            choice1:{answer:"atmosphere",value:2},
+            choice2:{answer:"soil",value:1},
+            choice3:{answer:"pollutants",value:4},
+            choice4:{answer:"seeds",value:3}},
+
+            {question:"13.India's first satellite Aryabhata was launched from",
+            choice1:{answer:"Soviet Union",value:1},
+            choice2:{answer:"America",value:2},
+            choice3:{answer:"India",value:3},
+            choice4:{answer:"Israel",value:4}},
+
+            {question:"14.The first high-level programming was _____________",
+            choice1:{answer:"COBOL",value:4},
+            choice2:{answer:"FORTRAN",value:1},
+            choice3:{answer:"LISP",value:3},
+            choice4:{answer:"Pascal",value:2}},
+
+            {question:"15.In Banking terminology, NPA means",
+            choice1:{answer:"Non-Promise Account",value:4},
+            choice2:{answer:"Non-Personal Account",value:2},
+            choice3:{answer:"Non-Performing Asset",value:1},
+            choice4:{answer:"Net-performing Asset",value:3}},
+
+            {question:"16.National stock exchange is located",
+            choice1:{answer:" New Delhi",value:3},
+            choice2:{answer:"Mumbai",value:1},
+            choice3:{answer:"Kolkata",value:2},
+            choice4:{answer:"Bangalore",value:4}},
+
+            {question:"17.Which is the largest producer and exporter of Rubber in the world?",
+            choice1:{answer:"India",value:4},
+            choice2:{answer:"Thailand",value:1},
+            choice3:{answer:"Sri Lanka",value:3},
+            choice4:{answer:"China",value:2}},
+
+            {question:"18.Which of the following series is true about energy flow in an ecosystem?",
+            choice1:{answer:" Producers---->Decomposers---->Consumers",value:3},
+            choice2:{answer:"Decomposers---->Consumers---->Producers",value:2},
+            choice3:{answer:"Producers---->Consumers---->Decomposers",value:1},
+            choice4:{answer:"Consumers---->Producers---->Decomposers",value:4}},
+
+            {question:"19.Layer of atmosphere in which Ozone layer lies is",
+            choice1:{answer:"exosphere",value:4},
+            choice2:{answer:"mesosphere",value:3},
+            choice3:{answer:"stratosphere",value:1},
+            choice4:{answer:"troposphere",value:2}},
+
+            {question:"20.Full form of COD is",
+            choice1:{answer:"Chemical Oxide Demand",value:2},
+            choice2:{answer:" Chemical Oxygen Demand",value:1},
+            choice3:{answer:"Chemical Ozone Demand",value:3},
+            choice4:{answer:"None of these",value:4}},
+
+            {question:"21.Mohiniattam dance from developed originally in which state?",
+            choice1:{answer:"Karnataka",value:4},
+            choice2:{answer:"Orissa",value:3},
+            choice3:{answer:"Tamil Nadu",value:2},
+            choice4:{answer:"Kerala",value:1}},
+
+            {question:"22.Who is the first Asian Winner of Nobel Prize?",
+            choice1:{answer:"A. C. V. Raman",value:2},
+            choice2:{answer:"Rabindranath Tagore ",value:1},
+            choice3:{answer:"Mother Teresa",value:3},
+            choice4:{answer:" Rajiv Gandhi",value:4}},
+
+            {question:"23.Which of the following awards was conferred on Mrs. Kiran Bedi",
+            choice1:{answer:"Saraswati",value:2},
+            choice2:{answer:"Golden Globe",value:3},
+            choice3:{answer:"Magsaysay",value:1},
+            choice4:{answer:"Rani Lakshmi",value:4}},
+
+            {question:"24.The first sportsperson to have the honor of Bharat Ratna is:",
+            choice1:{answer:"Milkha Singh",value:4},
+            choice2:{answer:" Sunil Gavaskar",value:3},
+            choice3:{answer:"Dara Singh",value:2},
+            choice4:{answer:"Sachin Tendulkar",value:1}},
+
+            {question:"25.Ashoka Chakra is awarded for",
+            choice1:{answer:"The most conspicuous bravery of self-sacrifice on land, air or sea but not in presence of an enemy",value:1},
+            choice2:{answer:"Outstanding contribution to the literature",value:2},
+            choice3:{answer:" Gallantry By Children",value:3},
+            choice4:{answer:"Acts of gallantry in the presence of the enemy",value:4}},
+
+            {question:"26.What was the earlier name of music director A.R. Rehman?",
+            choice1:{answer:"Dileep Kumar",value:1},
+            choice2:{answer:"Dev Kumar",value:4},
+            choice3:{answer:"Raj Kumar",value:3},
+            choice4:{answer:"Manoj Kumar",value:2}},
+
+            {question:"27.Who is the author of Devadas?",
+            choice1:{answer:"Indira Gandhi",value:3},
+            choice2:{answer:" Manu",value:2},
+            choice3:{answer:" Ravindra Nath Tagore",value:4},
+            choice4:{answer:"Sarat Chandra Chatterjee",value:1}},
+
+            {question:"28.The Big Bang Theory is related to which of the following?",
+            choice1:{answer:"Continental Drift",value:4},
+            choice2:{answer:"Origin of Universe",value:1},
+            choice3:{answer:"Origin of Himalayas",value:2},
+            choice4:{answer:"Eruption of Volcanoes",value:3}},
+
+            {question:"29.Television was invented by",
+            choice1:{answer:"Sholes",value:3},
+            choice2:{answer:"J.L.Baird",value:1},
+            choice3:{answer:"Shockley",value:2},
+            choice4:{answer:"John Napier",value:4}},
+
+            {question:"30.Abdul Kalam Azad became the ____ President of India.",
+            choice1:{answer:"9th",value:3},
+            choice2:{answer:"10th",value:4},
+            choice3:{answer:"11th",value:1},
+            choice4:{answer:"12th",value:2}},
+            ]
+
+        
+        content=`<div class=top_content>
+            <h1>S.A.ENGINEERING COLLEGE</h1>
+            <h5>(An Autonomous Institution Affiliated to Anna University Chennai)</h5>
+            </div>
+            <marquee>DEPARTMENT OF COMPUTER APPLICATIONS</marquee>
+            <div class=title_1>
+                PRELIMINARY ROUND
+            </div><br>
+            <hr>
+        
+            <div class=personal_details>
+                 PARTICIPANT NAME-1<input id=participant_name_1>
+                 PARTICIPANT NAME-2<input id=participant_name_2>
+                COURSE:<select id=course>
+                        <option>BCA</option>
+                        <option>B.sc.Computer Science</option>
+                        </select>
+                YEAR:<select id=year>
+                        <option>I</option>
+                        <option>II</option>
+                        <option>III</option>
+                        </select>
+                COLLEGE NAME:<input id=college_name>
+            </div>
+            <hr><br>
+            <div>
+                <hr>
+                <div class=instruction_details>
+                    <h3><center><u>INSTRUCTION</u></center></h3>
+                    <ol>
+                    <li><b>Participant are requested to fill the above selection(Details).<b>
+                    <li><b>The Preliminary round consists of 30 Question and the duration-30 minutues.<b>
+                    <li><b>Participants are requested not to close the screen once you Completed the quiz.<b>
+                    </ol>
+                </div>
+            </div>
+            <hr><br><br>`
+        for(i=0;i<database.length;i++)
+        {
+        content= content+`
+        <div class=parent>
+            <div class=question>
+                <h1>${database[i].question}</h1>
+            </div>
+            <div class=answer>
+            <input type=radio name="chioce${i}" id="chioce1_${i}" value=${database[i].choice1.value}>${database[i].choice1.answer}<br>
+            <input type=radio name="chioce${i}" id="chioce2_${i}" value=${database[i].choice2.value}>${database[i].choice2.answer}<br>
+            <input type=radio name="chioce${i}" id="chioce3_${i}" value=${database[i].choice3.value}>${database[i].choice3.answer}<br>
+            <input type=radio name="chioce${i}" id="chioce4_${i}" value=${database[i].choice4.value}>${database[i].choice4.answer}
+
+            </div>
+        </div>`
+        }
+        document.getElementById("main").innerHTML=content
+        function press()
+        {
+            count=0
+            for(i=0;i<database.length;i++)
+            {
+               ip1_ref=document.getElementById(`chioce1_${i}`)
+                ip2_ref=document.getElementById(`chioce2_${i}`)
+                ip3_ref=document.getElementById(`chioce3_${i}`)
+                ip4_ref=document.getElementById(`chioce4_${i}`)
+                result=false
+                if(ip1_ref.checked && ip1_ref.value=="1")
+                {
+                    result=true
+                }
+                else if(ip2_ref.checked && ip2_ref.value=="1")
+                {
+                    result=true
+                }
+                else if(ip3_ref.checked && ip3_ref.value=="1")
+                {
+                    result=true
+                }
+                else if(ip4_ref.checked && ip4_ref.value=="1")
+                {
+                    result=true
+                }
+                if(result)
+                {
+                    count++
+                }
+                
+               
+            }
+            alert("Successfully Completed your Preliminary round!!")
+            alert("Please don't close the screen")
+            //alert(count)
+            console.log(count)
+                participant_val_1=document.getElementById('participant_name_1').value
+                participant_val_2=document.getElementById('participant_name_2').value
+                course_val=document.getElementById('course').value
+                year_val=document.getElementById('year').value
+                college_name_val=document.getElementById('college_name').value
+                
+                table_row=document.createElement('tr')
+                
+                participant_data_1=document.createElement('td')
+                participant_data_1.innerHTML=participant_val_1
+                
+                participant_data_2=document.createElement('td')
+                participant_data_2.innerHTML=participant_val_2
+                
+                course_data=document.createElement('td')
+                course_data.innerHTML=course_val
+
+                year_data=document.createElement('td')
+                year_data.innerHTML=year_val
+
+                college_name_data=document.createElement('td')
+                college_name_data.innerHTML=college_name_val
+                
+                table_row.appendChild(participant_data_1)
+                table_row.appendChild(participant_data_2)
+                table_row.appendChild(course_data)
+                table_row.appendChild(year_data)
+                table_row.appendChild(college_name_data)
+                
+                document.getElementById('main_1').appendChild(table_row)
+        
+        }
+
+
+        
+        </script>
+        
+    </body>
+</html>
